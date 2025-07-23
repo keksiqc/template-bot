@@ -20,7 +20,7 @@ dev = [
 ]
 
 [tool.poe.tasks]
-pre-commit = "pre-commit"
+precommit = "pre-commit install"
 start = "python -m bot"
 lint = "ruff check ."
 fmt = "ruff format ."
