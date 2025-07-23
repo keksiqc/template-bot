@@ -14,4 +14,4 @@ if os.name != "nt":
 
 # On Windows, the selector event loop is required for aiodns.
 if os.name == "nt":
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) # ty: ignore[unresolved-attribute]
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())  # ty: ignore[unresolved-attribute]
