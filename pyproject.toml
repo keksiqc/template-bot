@@ -9,3 +9,10 @@ dependencies = [
     "hikari[speedups]>=2.3.5",
     "rich>=14.0.0",
 ]
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.36.0",
+    "ruff>=0.12.4",
+    "ty>=0.0.1a15",
+]
