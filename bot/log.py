@@ -26,16 +26,14 @@ def setup_logger(
         log = logging.getLogger(__name__)
         log.info("Hello, world!")
     """
-    numeric_level = (
-        level if isinstance(level, int) else logging.getLevelName(level.upper())
-    )
+    numeric_level = level if isinstance(level, int) else logging.getLevelName(level.upper())
 
     # Ensure log directory exists
-    log_path = Path(log_dir) / log_file
+    log_path: Path = Path(log_dir) / log_file
     log_path.parent.mkdir(parents=True, exist_ok=True)
 
     # Root logger configuration
-    root = logging.getLogger()
+    root: logging.Logger = logging.getLogger()
     root.setLevel(numeric_level)
     # Remove any default handlers
     root.handlers.clear()
