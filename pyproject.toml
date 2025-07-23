@@ -19,11 +19,11 @@ dev = [
 ]
 
 [tool.poe.tasks]
-pre-commit = "uv run pre-commit"
-start = "uv run python -m bot"
-lint = "uv run ruff check ."
-fmt = "uv run ruff format ."
-check = "uv run ty check"
+pre-commit = "pre-commit"
+start = "python -m bot"
+lint = "ruff check ."
+fmt = "ruff format ."
+check = "ty check"
 
 [tool.ruff]
 fix = true
