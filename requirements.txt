@@ -82,10 +82,6 @@ cffi==1.17.1 \
     # via
     #   brotlicffi
     #   pycares
-cfgv==3.4.0 \
-    --hash=sha256:b7265b1f29fd3316bfcd2b330d63d024f2bfd8bcb8b0272f8e19a504856c48f9 \
-    --hash=sha256:e52591d4c5f5dead8e0f673fb16db7949d2cfb3f7da4582893288f0ded8fe560
-    # via pre-commit
 ciso8601==2.3.2 \
     --hash=sha256:ec1616969aa46c51310b196022e5d3926f8d3fa52b80ec17f6b4133623bd5434
     # via hikari
@@ -101,14 +97,6 @@ confspec==0.0.3 \
     --hash=sha256:0deaf3cccefbf55a4a2184bdcf5806fedb8b9343ba19641393f31dfd6fe2e78e \
     --hash=sha256:1d421b4e3342df6ea094119728ad03f89aff06b75b813db37a6726ca63e702fc
     # via hikari-lightbulb
-distlib==0.4.0 \
-    --hash=sha256:9659f7d87e46584a30b5780e43ac7a2143098441670ff0a49d5f9034c54a6c16 \
-    --hash=sha256:feec40075be03a04501a973d81f633735b4b69f98b05450592310c0f401a4e0d
-    # via virtualenv
-filelock==3.18.0 \
-    --hash=sha256:adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2 \
-    --hash=sha256:c401f4f8377c4464e6db25fff06205fd89bdd83b65eb0488ed1b160f780e21de
-    # via virtualenv
 frozenlist==1.7.0 \
     --hash=sha256:04fb24d104f425da3540ed83cbfc31388a586a7696142004c577fa61c6298c3f \
     --hash=sha256:05579bf020096fe05a764f1f84cd104a12f78eaab68842d036772dc6d4870b4b \
@@ -159,10 +147,6 @@ hikari-lightbulb==3.0.3 \
     --hash=sha256:871932c2cd9315f34bb398e2c022516c391d92a06b16199cf342a4b662e69f52 \
     --hash=sha256:cfa7356665aa6df609ec33eef0b2b015ee32281616ba265e66df363a54d240be
     # via template-bot
-identify==2.6.12 \
-    --hash=sha256:ad9672d5a72e0d2ff7c5c8809b62dfa60458626352fb0eb7b55e69bdc45334a2 \
-    --hash=sha256:d8de45749f1efb108badef65ee8386f0f7bb19a7f26185f74de6367bffbaf0e6
-    # via pre-commit
 idna==3.10 \
     --hash=sha256:12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9 \
     --hash=sha256:946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3
@@ -222,10 +206,6 @@ multidict==6.6.3 \
     #   aiohttp
     #   hikari
     #   yarl
-nodeenv==1.9.1 \
-    --hash=sha256:6ec12890a2dab7946721edbfbcd91f3319c6ccc9aec47be7c7e6b7011ee6645f \
-    --hash=sha256:ba11c9782d29c27c70ffbdda2d7415098754709be8a7056d79a737cd901155c9
-    # via pre-commit
 orjson==3.11.0 \
     --hash=sha256:05f094edd2b782650b0761fd78858d9254de1c1286f5af43145b3d08cdacfd51 \
     --hash=sha256:0759b36428067dc777b202dd286fbdd33d7f261c6455c4238ea4e8474358b1e6 \
@@ -248,16 +228,29 @@ pastel==0.2.1 \
     --hash=sha256:4349225fcdf6c2bb34d483e523475de5bb04a5c10ef711263452cb37d7dd4364 \
     --hash=sha256:e6581ac04e973cac858828c6202c1e1e81fee1dc7de7683f3e1ffe0bfd8a573d
     # via poethepoet
-platformdirs==4.3.8 \
-    --hash=sha256:3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc \
-    --hash=sha256:ff7059bb7eb1179e2685604f4aaf157cfd9535242bd23742eadc3c13542139b4
-    # via virtualenv
 poethepoet==0.36.0 \
     --hash=sha256:2217b49cb4e4c64af0b42ff8c4814b17f02e107d38bc461542517348ede25663 \
     --hash=sha256:693e3c1eae9f6731d3613c3c0c40f747d3c5c68a375beda42e590a63c5623308
-pre-commit==4.2.0 \
-    --hash=sha256:601283b9757afd87d40c4c4a9b2b5de9637a8ea02eaff7adc2d0fb4e04841146 \
-    --hash=sha256:a009ca7205f1eb497d10b845e52c838a98b6cdd2102a6c8e4540e94ee75c58bd
+prek==0.2.3 \
+    --hash=sha256:030a41c816d2558326f3ad9adab35e412280fc3183a81a23f450b86b9525aa1d \
+    --hash=sha256:1193882d0e1fb21b757ccc53a34435d229a2f38ba441edd2c66289532b23d96a \
+    --hash=sha256:216c06989e421f79bf5a9eb3df1c470878438fac1bc0a636e03fc4d614bf219e \
+    --hash=sha256:21cb38ae352772477474cb4c3cd9e9056a43ba7779e634bc23826b6dd01941f5 \
+    --hash=sha256:2d24575deb40486a1f08799b1e5e17f3be685cbfe4b5071eb93911a9c2728841 \
+    --hash=sha256:2de997b640350a4653c267e6e6e681a0902ab436a8a7e659ab1bced213249f79 \
+    --hash=sha256:3431ebc218d7a7fc0f708c9eec4027949a081870f4f9fba3a7d65c706db87b72 \
+    --hash=sha256:37467f2752ce0d4ca6451970d6863211db0ce3f390c74e91db790aad51357eb8 \
+    --hash=sha256:4520c1e0827775af9112787cf3b005a3deee6baeb5d6ebd71004a20b9a7ea73b \
+    --hash=sha256:466eb9ff44575c95b7442751ea86c2f0e9c8c188e7cb79a83134c3a768631c20 \
+    --hash=sha256:4f6f90c5adda349110a9ff6ca50cda8200d9fb10a6891ca9c89f179cb789c957 \
+    --hash=sha256:5c8bbdc6f4313d989327407a516b59e27624ff16c75f939c497c9cacf6e4fbba \
+    --hash=sha256:7f567b7f2aab8b7dc09e23bab377df69f172b7ccc630bd98fadd103f04878a0e \
+    --hash=sha256:a0df9d89618ea8060e766ec21f67bf6c0fac4f320fcbf3073919630b17494996 \
+    --hash=sha256:b7a08dacd23791392e9807f4f42631aa1ac53b5907256e4c94af416833b23d00 \
+    --hash=sha256:c8eab4a8d71b978f35a73b7a0e074bbe88c8982e2446a05bfc09fcc046b9a2c2 \
+    --hash=sha256:c90e15f8617a956a9d2b0c612783eec585a355da685b8f44d338af62ba667c55 \
+    --hash=sha256:e4afc3876dc812a55dfe7d48c0878bdfadc035697292dbfd6a6bd819d845721b \
+    --hash=sha256:e5ba2b767f1ab011a41592dbc2b41ab9c4641e39b763ea0a0519e1d7b83f79ee
 propcache==0.3.2 \
     --hash=sha256:03c89c1b14a5452cf15403e291c0ccd7751d5b9736ecb2c5bab977ad6c5bcd81 \
     --hash=sha256:0a2f2235ac46a7aa25bdeb03a9e7060f6ecbd213b1f9101c43b3090ffb971ef6 \
@@ -333,9 +326,7 @@ pyyaml==6.0.2 \
     --hash=sha256:bc2fa7c6b47d6bc618dd7fb02ef6fdedb1090ec036abab80d4681424b84c1183 \
     --hash=sha256:d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e \
     --hash=sha256:efdca5630322a10774e8e98e1af481aad470dd62c3170801852d752aa7a783ba
-    # via
-    #   poethepoet
-    #   pre-commit
+    # via poethepoet
 rich==14.0.0 \
     --hash=sha256:1c9491e1951aac09caffd42f448ee3d04e58923ffe14993f6e83068dc395d7e0 \
     --hash=sha256:82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725
@@ -391,10 +382,6 @@ uvloop==0.21.0 \
     --hash=sha256:bfd55dfcc2a512316e65f16e503e9e450cab148ef11df4e4e679b5e8253a5281 \
     --hash=sha256:f3df876acd7ec037a3d005b3ab85a7e4110422e4d9c1571d4fc89b0fc41b6816
     # via template-bot
-virtualenv==20.32.0 \
-    --hash=sha256:2c310aecb62e5aa1b06103ed7c2977b81e042695de2697d01017ff0f1034af56 \
-    --hash=sha256:886bf75cadfdc964674e6e33eb74d787dff31ca314ceace03ca5810620f4ecf0
-    # via pre-commit
 yarl==1.20.1 \
     --hash=sha256:041eaa14f73ff5a8986b4388ac6bb43a77f2ea09bf1913df7a35d4646db69e53 \
     --hash=sha256:0b5ff0fbb7c9f1b1b5ab53330acbfc5247893069e7716840c8e7d5bb7355038a \

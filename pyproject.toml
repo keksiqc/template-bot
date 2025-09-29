@@ -14,13 +14,13 @@ dependencies = [
 [dependency-groups]
 dev = [
     "poethepoet>=0.36.0",
-    "pre-commit>=4.2.0",
+    "prek>=0.2.3",
     "ruff>=0.12.4",
     "ty>=0.0.1a15",
 ]
 
 [tool.poe.tasks]
-precommit = "pre-commit install"
+prek = "prek install"
 start = "python -m bot"
 lint = "ruff check ."
 fmt = "ruff format ."
