@@ -6,9 +6,6 @@
       ":semanticCommitTypeAll(chore)"
     ],
     "dependencyDashboard": false,
-    "lockFileMaintenance": {
-        "enabled": true
-    },
     "labels": [
         "renovate"
     ]
