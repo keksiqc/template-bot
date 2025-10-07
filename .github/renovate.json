@@ -5,7 +5,7 @@
       "group:allNonMajor",
       ":semanticCommitTypeAll(chore)"
     ],
-    "enabledManagers": ["python", "ci", "docker", "mise"],
+    "enabledManagers": ["pep621", "github-actions", "dockerfile", "mise"],
     "dependencyDashboard": false,
     "labels": [
         "renovate"
