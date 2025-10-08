@@ -3,20 +3,20 @@ name = "template-bot"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14.0"
 dependencies = [
-    "hikari-lightbulb>=3.0.3",
-    "hikari[speedups]>=2.3.5",
-    "rich>=14.0.0",
+    "hikari-lightbulb>=3.2.1",
+    "hikari[speedups]>=2.4.1",
+    "rich>=14.1.0",
     "uvloop>=0.21.0",
 ]
 
 [dependency-groups]
 dev = [
-    "poethepoet>=0.36.0",
-    "prek>=0.2.3",
-    "ruff>=0.12.4",
-    "ty>=0.0.1a15",
+    "poethepoet>=0.37.0",
+    "prek>=0.2.4",
+    "ruff>=0.14.0",
+    "ty>=0.0.1a21",
 ]
 
 [tool.poe.tasks]
