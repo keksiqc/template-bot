@@ -5,7 +5,6 @@
       "group:allNonMajor",
       ":semanticCommitTypeAll(chore)"
     ],
-    "enabledManagers": ["pep621", "github-actions", "dockerfile", "mise"],
     "rangeStrategy": "bump",
     "dependencyDashboard": false,
     "labels": [
