@@ -6,7 +6,6 @@
       ":semanticCommitTypeAll(chore)"
     ],
     "rangeStrategy": "bump",
-    "dependencyDashboard": false,
     "labels": [
         "renovate"
     ]
