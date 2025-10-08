@@ -5,6 +5,7 @@
       "group:allNonMajor",
       ":semanticCommitTypeAll(chore)"
     ],
+    "enabledManagers": ["pep621", "pyenv", "github-actions", "dockerfile", "mise"],
     "rangeStrategy": "bump",
     "labels": [
         "renovate"
