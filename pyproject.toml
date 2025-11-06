@@ -5,18 +5,18 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.14.0"
 dependencies = [
-    "hikari-lightbulb>=3.2.1",
-    "hikari[speedups]>=2.4.1",
-    "rich>=14.1.0",
-    "uvloop>=0.21.0",
+    "hikari-lightbulb>=3.2.2",
+    "hikari[speedups]>=2.5.0",
+    "rich>=14.2.0",
+    "uvloop>=0.22.1",
 ]
 
 [dependency-groups]
 dev = [
     "poethepoet>=0.37.0",
-    "prek>=0.2.4",
-    "ruff>=0.14.0",
-    "ty>=0.0.1a21",
+    "prek>=0.2.13",
+    "ruff>=0.14.4",
+    "ty>=0.0.1a25",
 ]
 
 [tool.poe.tasks]
