@@ -14,7 +14,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "poethepoet>=0.37.0",
-    "prek>=0.2.13",
+    "prek>=0.2.14",
     "ruff>=0.14.5",
     "ty>=0.0.1a26",
 ]
