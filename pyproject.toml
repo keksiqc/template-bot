@@ -15,8 +15,8 @@ dependencies = [
 dev = [
     "poethepoet>=0.38.0",
     "prek>=0.2.19",
-    "ruff>=0.14.7",
-    "ty>=0.0.1a30",
+    "ruff>=0.14.8",
+    "ty>=0.0.1a31",
 ]
 
 [tool.poe.tasks]
