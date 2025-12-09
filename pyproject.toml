@@ -3,7 +3,7 @@ name = "template-bot"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.14.1"
+requires-python = ">=3.14.2"
 dependencies = [
     "hikari-lightbulb>=3.2.2",
     "hikari[speedups]>=2.5.0",
@@ -14,9 +14,9 @@ dependencies = [
 [dependency-groups]
 dev = [
     "poethepoet>=0.38.0",
-    "prek>=0.2.19",
+    "prek>=0.2.21",
     "ruff>=0.14.8",
-    "ty>=0.0.1a31",
+    "ty>=0.0.1a32",
 ]
 
 [tool.poe.tasks]
