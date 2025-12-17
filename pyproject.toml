@@ -14,9 +14,9 @@ dependencies = [
 [dependency-groups]
 dev = [
     "poethepoet>=0.38.0",
-    "prek>=0.2.21",
-    "ruff>=0.14.8",
-    "ty>=0.0.1a32",
+    "prek>=0.2.22",
+    "ruff>=0.14.9",
+    "ty>=0.0.2",
 ]
 
 [tool.poe.tasks]
