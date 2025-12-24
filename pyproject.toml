@@ -16,7 +16,7 @@ dev = [
     "poethepoet>=0.38.0",
     "prek>=0.2.24",
     "ruff>=0.14.10",
-    "ty>=0.0.6",
+    "ty>=0.0.7",
 ]
 
 [tool.poe.tasks]
