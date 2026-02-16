@@ -5,6 +5,8 @@ Call `init_logging()` once at startup (e.g. in your __init__.py) and then
 just use `logging.getLogger(__name__)` everywhere else.
 """
 
+from __future__ import annotations
+
 import logging
 import logging.handlers
 import os
