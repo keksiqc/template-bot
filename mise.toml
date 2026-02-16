@@ -10,7 +10,16 @@ idiomatic_version_file_enable_tools = ["python"]
 prek-install = "uv run prek install"
 prek-update = "uv run prek auto-update"
 prek = "uv run prek run --all-files"
-lint = "uv run ruff check ."
-fmt = "uv run ruff format ."
-check = "uv run ty check"
-start = "uv run python -OO -m bot"
+lint = "uv run ruff check --fix"
+fmt = "uv run ruff format"
+typecheck = "uv run ty check"
+
+[tasks.check]
+depends = ["lint", "fmt", "typecheck"]
+
+[tasks.fix]
+depends = ["lint", "fmt"]
+
+[tasks.start]
+depends = ["typecheck"]
+run = "uv run python -OO -m bot"
