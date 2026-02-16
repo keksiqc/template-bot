@@ -18,13 +18,6 @@ dev = [
     "ty>=0.0.17",
 ]
 
-[tool.poe.tasks]
-prek = "prek install"
-start = "python -m bot"
-lint = "ruff check ."
-fmt = "ruff format ."
-check = "ty check"
-
 [tool.ruff]
 fix = true
 line-length = 120

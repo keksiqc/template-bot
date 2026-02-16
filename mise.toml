@@ -5,3 +5,12 @@ uv = "latest"
 experimental = true
 python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = ["python"]
+
+[tasks]
+prek-install = "uv run prek install"
+prek-update = "uv run prek auto-update"
+prek = "uv run prek run --all-files"
+lint = "uv run ruff check ."
+fmt = "uv run ruff format ."
+check = "uv run ty check"
+start = "uv run python -m bot"
