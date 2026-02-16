@@ -50,8 +50,8 @@ ignore = [
 
 [tool.ruff.format]
 docstring-code-format = true
-quote-style = "double"
 indent-style = "space"
+quote-style = "double"
 
 [tool.ruff.lint.isort]
 required-imports = ["from __future__ import annotations"]
