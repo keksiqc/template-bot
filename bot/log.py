@@ -7,6 +7,8 @@ just use `logging.getLogger(__name__)` everywhere else.
 
 import logging
 import logging.handlers
+import os
+import warnings
 from pathlib import Path
 
 from rich.logging import RichHandler
@@ -14,7 +16,7 @@ from rich.logging import RichHandler
 
 def setup_logger(
     *,
-    level: str | int = logging.INFO,
+    level: logging._Level = logging.INFO,
     log_dir: str = "logs",
     log_file: str = "bot.log",
 ) -> None:
@@ -26,7 +28,18 @@ def setup_logger(
         log = logging.getLogger(__name__)
         log.info("Hello, world!")
     """
-    numeric_level = level if isinstance(level, int) else logging.getLevelName(level.upper())
+
+    # Set the logging level
+    level = os.environ.get("LOG_LEVEL", level) or level
+
+    # Apparently this makes logging faster
+    logging.logThreads = False
+    logging.logProcesses = False
+    logging.logMultiprocessing = False
+
+    # Capture warnings
+    warnings.simplefilter("always", DeprecationWarning)
+    logging.captureWarnings(True)
 
     # Ensure log directory exists
     log_path: Path = Path(log_dir) / log_file
@@ -34,16 +47,15 @@ def setup_logger(
 
     # Root logger configuration
     root: logging.Logger = logging.getLogger()
-    root.setLevel(numeric_level)
-    # Remove any default handlers
     root.handlers.clear()
+    root.setLevel(level)
 
-    # File handler: daily rotation, 14-day retention
+    # File handler: daily rotation, 7-day retention
     file_handler = logging.handlers.TimedRotatingFileHandler(
         log_path,
         when="midnight",
         utc=True,
-        backupCount=14,
+        backupCount=7,
         encoding="utf-8",
     )
     file_handler.setFormatter(
@@ -52,21 +64,32 @@ def setup_logger(
             datefmt="%Y-%m-%d %H:%M:%S",
         )
     )
-    root.addHandler(file_handler)
 
     # Console handler: colourful Rich output
     console_handler = RichHandler(
         rich_tracebacks=True,
         tracebacks_show_locals=True,
     )
-    root.addHandler(console_handler)
+
+    logging.basicConfig(
+        level=level,
+        format="%(message)s",
+        handlers=[file_handler, console_handler],
+    )
 
     root.info(
         "Logging configured (level=%s, file=%s)",
-        logging.getLevelName(numeric_level),
+        logging.getLevelName(root.level),
         log_path,
     )
 
 
 if __name__ == "__main__":
     setup_logger()
+
+    log = logging.getLogger(__name__)
+    log.debug("This is a debug message")
+    log.info("This is an info message")
+    log.warning("This is a warning message")
+    log.error("This is an error message")
+    log.critical("This is a critical message")
