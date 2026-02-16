@@ -14,7 +14,7 @@ from pathlib import Path
 from rich.logging import RichHandler
 
 
-def setup_logger(
+def init_logging(
     *,
     level: int | str = logging.INFO,
     log_dir: str = "logs",
@@ -85,7 +85,7 @@ def setup_logger(
 
 
 if __name__ == "__main__":
-    setup_logger()
+    init_logging()
 
     log = logging.getLogger(__name__)
     log.debug("This is a debug message")

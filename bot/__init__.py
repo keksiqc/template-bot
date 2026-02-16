@@ -1,10 +1,10 @@
 import asyncio
 import os
 
-from bot.log import setup_logger
+from bot.log import init_logging
 
 
-setup_logger()
+init_logging()
 
 
 if os.name != "nt":
