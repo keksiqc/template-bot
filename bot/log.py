@@ -1,7 +1,7 @@
 """
 One-time logging setup for your bot.
 
-Call `setup_logger()` once at startup (e.g. in your __init__.py) and then
+Call `init_logging()` once at startup (e.g. in your __init__.py) and then
 just use `logging.getLogger(__name__)` everywhere else.
 """
 
@@ -17,8 +17,7 @@ from rich.logging import RichHandler
 def init_logging(
     *,
     level: int | str = logging.INFO,
-    log_dir: str = "logs",
-    log_file: str = "bot.log",
+    log_path: str | Path = Path("logs/bot.log"),
 ) -> None:
     """
     Configure the *root* logger once at application start.
@@ -42,25 +41,18 @@ def init_logging(
     logging.captureWarnings(True)
 
     # Ensure log directory exists
-    log_path: Path = Path(log_dir) / log_file
-    log_path.parent.mkdir(parents=True, exist_ok=True)
-
-    # Root logger configuration
-    root: logging.Logger = logging.getLogger()
-    root.handlers.clear()
-    root.setLevel(level)
+    if isinstance(log_path, str):
+        log_path = Path(log_path)
+    if not log_path.parent.exists():
+        log_path.parent.mkdir(parents=True)
 
     # File handler: daily rotation, 7-day retention
     file_handler = logging.handlers.TimedRotatingFileHandler(
-        log_path,
-        when="midnight",
-        utc=True,
-        backupCount=7,
-        encoding="utf-8",
+        log_path, when="midnight", utc=True, backupCount=7, encoding="utf-8", delay=True
     )
     file_handler.setFormatter(
         logging.Formatter(
-            "%(asctime)s [%(levelname)-8s] %(name)s: %(message)s",
+            fmt="%(asctime)s [%(levelname)-8s] %(name)s: %(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",
         )
     )
@@ -75,10 +67,12 @@ def init_logging(
         level=level,
         format="%(message)s",
         handlers=[file_handler, console_handler],
+        force=True,
     )
 
+    root = logging.getLogger()
     root.info(
-        "Logging configured (level=%s, file=%s)",
+        "Logging configured (level=%s, path='%s')",
         logging.getLevelName(root.level),
         log_path,
     )
