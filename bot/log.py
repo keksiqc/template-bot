@@ -16,7 +16,7 @@ from rich.logging import RichHandler
 
 def setup_logger(
     *,
-    level: logging._Level = logging.INFO,
+    level: int | str = logging.INFO,
     log_dir: str = "logs",
     log_file: str = "bot.log",
 ) -> None:
@@ -30,7 +30,7 @@ def setup_logger(
     """
 
     # Set the logging level
-    level = os.environ.get("LOG_LEVEL", level) or level
+    level = os.environ.get("LOG_LEVEL", level)
 
     # Apparently this makes logging faster
     logging.logThreads = False
