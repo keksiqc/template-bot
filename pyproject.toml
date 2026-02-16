@@ -59,6 +59,3 @@ docstring-code-format = true
 required-imports = ["from __future__ import annotations"]
 known-first-party = ["bot"]
 lines-after-imports = 2
-order-by-type = false
-case-sensitive = true
-combine-as-imports = true
