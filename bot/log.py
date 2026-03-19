@@ -1,7 +1,7 @@
 """
 One-time logging setup for your bot.
 
-Call `init_logging()` once at startup (e.g. in your __init__.py) and then
+Call `init_logger()` once at startup (e.g. in your __init__.py) and then
 just use `logging.getLogger(__name__)` everywhere else.
 """
 
@@ -13,7 +13,7 @@ import os
 import warnings
 from pathlib import Path
 
-from rich.logging import RichHandler
+from colorlog import ColoredFormatter
 
 
 def init_logging(
@@ -43,10 +43,12 @@ def init_logging(
     logging.captureWarnings(True)
 
     # Ensure log directory exists
-    if isinstance(log_path, str):
-        log_path = Path(log_path)
-    if not log_path.parent.exists():
-        log_path.parent.mkdir(parents=True)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Root logger configuration
+    root: logging.Logger = logging.getLogger()
+    root.handlers.clear()
+    root.setLevel(level)
 
     # File handler: daily rotation, 7-day retention
     file_handler = logging.handlers.TimedRotatingFileHandler(
@@ -54,30 +56,34 @@ def init_logging(
     )
     file_handler.setFormatter(
         logging.Formatter(
-            fmt="%(asctime)s [%(levelname)-8s] %(name)s: %(message)s",
+            fmt="%(asctime)s %(levelname)-8s [%(name)s] %(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",
         )
     )
 
-    # Console handler: colourful Rich output
-    console_handler = RichHandler(
-        rich_tracebacks=True,
-        tracebacks_show_locals=True,
+    # Stream handler: colourful console output
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(
+        ColoredFormatter(
+            fmt=(
+                "%(thin)s%(asctime)s%(reset)s "
+                "%(log_color)s%(levelname)-8s%(reset)s "
+                "[%(thin_blue)s%(name)s%(reset)s] "
+                "%(message)s "
+                "%(thin)s"
+            ),
+            datefmt="%Y-%m-%d %H:%M:%S",
+        )
     )
+
+    # TODO: JSON handler
 
     logging.basicConfig(
         level=level,
-        format="%(message)s",
-        handlers=[file_handler, console_handler],
-        force=True,
+        handlers=[file_handler, stream_handler],
     )
 
-    root = logging.getLogger()
-    root.info(
-        "Logging configured (level=%s, path='%s')",
-        logging.getLevelName(root.level),
-        log_path,
-    )
+    root.info("Logging configured (level=%s, file=%s)", logging.getLevelName(root.level), str(log_path))
 
 
 if __name__ == "__main__":
