@@ -1,7 +1,7 @@
 """
 One-time logging setup for your bot.
 
-Call `init_logger()` once at startup (e.g. in your __init__.py) and then
+Call `init_logging()` once at startup (e.g. in your __init__.py) and then
 just use `logging.getLogger(__name__)` everywhere else.
 """
 
@@ -10,90 +10,98 @@ from __future__ import annotations
 import logging
 import logging.handlers
 import os
-import warnings
 from pathlib import Path
 
-from colorlog import ColoredFormatter
+
+try:
+    from colorlog import ColoredFormatter
+except ImportError:
+    ColoredFormatter = None
+
+
+DEFAULT_LOG_PATH = Path("logs/bot.log")
+FILE_LOG_FORMAT = "%(asctime)s %(levelname)-8s [%(name)s] %(message)s"
+CONSOLE_LOG_FORMAT = (
+    "%(thin)s%(asctime)s%(reset)s %(log_color)s%(levelname)-8s%(reset)s [%(thin_blue)s%(name)s%(reset)s] %(message)s"
+)
+DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
+
+def _build_file_handler(log_path: Path) -> logging.Handler:
+    """Create the rotating file handler used for persistent logs."""
+
+    file_handler = logging.handlers.TimedRotatingFileHandler(
+        log_path,
+        when="midnight",
+        utc=True,
+        backupCount=7,
+        encoding="utf-8",
+        delay=True,
+    )
+    file_handler.setFormatter(logging.Formatter(fmt=FILE_LOG_FORMAT, datefmt=DATE_FORMAT))
+    return file_handler
+
+
+def _build_stream_handler() -> logging.Handler:
+    """Create the console handler, using color when available."""
+
+    stream_handler = logging.StreamHandler()
+
+    if ColoredFormatter is None:
+        stream_handler.setFormatter(logging.Formatter(fmt=FILE_LOG_FORMAT, datefmt=DATE_FORMAT))
+        return stream_handler
+
+    stream_handler.setFormatter(ColoredFormatter(fmt=CONSOLE_LOG_FORMAT, datefmt=DATE_FORMAT))
+    return stream_handler
 
 
 def init_logging(
     *,
     level: int | str = logging.INFO,
-    log_path: str | Path = Path("logs/bot.log"),
+    log_path: str | Path = DEFAULT_LOG_PATH,
 ) -> None:
-    """
-    Configure the *root* logger once at application start.
+    """Configure the root logger once at application start."""
 
-    After this function runs you can simply do:
-        import logging
-        log = logging.getLogger(__name__)
-        log.info("Hello, world!")
-    """
+    resolved_log_path = Path(log_path)
+    resolved_level = os.environ.get("LOG_LEVEL", level)
 
-    log_path = Path(log_path)
-
-    # Set the logging level
-    level = os.environ.get("LOG_LEVEL", level)
-
-    # Apparently this makes logging faster
+    # Skip per-record thread/process bookkeeping unless you need it in the format string.
     logging.logThreads = False
     logging.logProcesses = False
     logging.logMultiprocessing = False
 
-    # Capture warnings
-    warnings.simplefilter("always", DeprecationWarning)
     logging.captureWarnings(True)
 
-    # Ensure log directory exists
-    log_path.parent.mkdir(parents=True, exist_ok=True)
+    resolved_log_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # Root logger configuration
-    root: logging.Logger = logging.getLogger()
+    root = logging.getLogger()
     root.handlers.clear()
-    root.setLevel(level)
 
-    # File handler: daily rotation, 7-day retention
-    file_handler = logging.handlers.TimedRotatingFileHandler(
-        log_path, when="midnight", utc=True, backupCount=7, encoding="utf-8", delay=True
-    )
-    file_handler.setFormatter(
-        logging.Formatter(
-            fmt="%(asctime)s %(levelname)-8s [%(name)s] %(message)s",
-            datefmt="%Y-%m-%d %H:%M:%S",
-        )
-    )
+    root.setLevel(resolved_level)
 
-    # Stream handler: colourful console output
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(
-        ColoredFormatter(
-            fmt=(
-                "%(thin)s%(asctime)s%(reset)s "
-                "%(log_color)s%(levelname)-8s%(reset)s "
-                "[%(thin_blue)s%(name)s%(reset)s] "
-                "%(message)s "
-                "%(thin)s"
-            ),
-            datefmt="%Y-%m-%d %H:%M:%S",
-        )
+    root.addHandler(_build_file_handler(resolved_log_path))
+    root.addHandler(_build_stream_handler())
+    root.info(
+        "Logging configured",
+        extra={
+            "log_level_name": logging.getLevelName(root.level),
+            "log_path": str(resolved_log_path),
+        },
     )
 
-    # TODO: JSON handler
 
-    logging.basicConfig(
-        level=level,
-        handlers=[file_handler, stream_handler],
-    )
+def _run_self_test() -> None:
+    """Emit one message at each severity to validate the logger configuration."""
 
-    root.info("Logging configured (level=%s, file=%s)", logging.getLevelName(root.level), str(log_path))
+    init_logging(level="DEBUG")
+    log = logging.getLogger(__name__)
+
+    log.debug("Debug self-test message")
+    log.info("Info self-test message")
+    log.warning("Warning self-test message")
+    log.error("Error self-test message")
+    log.critical("Critical self-test message")
 
 
 if __name__ == "__main__":
-    init_logging()
-
-    log = logging.getLogger(__name__)
-    log.debug("This is a debug message")
-    log.info("This is an info message")
-    log.warning("This is a warning message")
-    log.error("This is an error message")
-    log.critical("This is a critical message")
+    _run_self_test()
