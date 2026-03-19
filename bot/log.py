@@ -30,6 +30,8 @@ def init_logging(
         log.info("Hello, world!")
     """
 
+    log_path = Path(log_path)
+
     # Set the logging level
     level = os.environ.get("LOG_LEVEL", level)
 
