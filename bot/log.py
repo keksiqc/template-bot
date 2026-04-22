@@ -13,10 +13,12 @@ import os
 from pathlib import Path
 
 
+COLORLOG_DISABLED = False
+
 try:
     from colorlog import ColoredFormatter
 except ImportError:
-    ColoredFormatter = None
+    COLORLOG_DISABLED = True
 
 
 DEFAULT_LOG_PATH = Path("logs/bot.log")
@@ -47,7 +49,7 @@ def _build_stream_handler() -> logging.Handler:
 
     stream_handler = logging.StreamHandler()
 
-    if ColoredFormatter is None:
+    if COLORLOG_DISABLED:
         stream_handler.setFormatter(logging.Formatter(fmt=FILE_LOG_FORMAT, datefmt=DATE_FORMAT))
         return stream_handler
 
