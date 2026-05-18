@@ -556,7 +556,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "prek", specifier = ">=0.3.13" },
+    { name = "prek", specifier = ">=0.4.0" },
     { name = "ruff", specifier = ">=0.15.13" },
     { name = "ty", specifier = ">=0.0.37" },
 ]
