@@ -14,7 +14,7 @@ dependencies = [
 dev = [
     "prek>=0.4.4",
     "ruff>=0.15.16",
-    "ty>=0.0.44",
+    "ty>=0.0.45",
 ]
 
 [tool.ruff]
