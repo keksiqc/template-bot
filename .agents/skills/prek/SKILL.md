@@ -12,7 +12,8 @@ name: prek
 
 Use this skill when the user wants to set up or run Git hooks with `prek`.
 
-`prek` is a Rust reimplementation of `pre-commit`. Its main job is to run hooks that check code and repository files before commit or on demand: formatters, linters, validators, security checks, and custom project checks.
+`prek` is a Rust reimplementation of `pre-commit`. Its main job is to run hooks that check code and repository files before commit or on demand:
+formatters, linters, validators, security checks, and custom project checks.
 
 ## Start with the public docs
 
@@ -99,7 +100,8 @@ hooks = [
 ]
 ```
 
-These examples use TOML 1.1 multiline inline tables. Use `[[repos.hooks]]` array-of-tables if an editor or parser in the toolchain does not support that syntax yet, or when a hook has many fields such as `env`, `pass_filenames = false`, or `priority`.
+These examples use TOML 1.1 multiline inline tables. Use `[[repos.hooks]]` array-of-tables if an editor or parser in the toolchain does not support that syntax yet,
+or when a hook has many fields such as `env`, `pass_filenames = false`, or `priority`.
 
 Filtering patterns:
 
