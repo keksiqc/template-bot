@@ -7,7 +7,7 @@ python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = ["python"]
 
 [env]
-_.file = '.env'
+_.file = ".env"
 BOT_ENV = "development"
 BOT_CONFIG = "./settings.toml"
 

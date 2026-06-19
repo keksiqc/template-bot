@@ -5,16 +5,16 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "hikari-lightbulb>=3.2.4",
-    "hikari[speedups]>=2.5.0",
-    "uvloop>=0.22.1",
+  "hikari-lightbulb>=3.2.4",
+  "hikari[speedups]>=2.5.0",
+  "uvloop>=0.22.1",
 ]
 
 [dependency-groups]
 dev = [
-    "prek>=0.4.5",
-    "ruff>=0.15.17",
-    "ty>=0.0.50",
+  "prek>=0.4.5",
+  "ruff>=0.15.17",
+  "ty>=0.0.50",
 ]
 
 [tool.ruff]
@@ -27,32 +27,53 @@ unsafe-fixes = true
 
 [tool.ruff.lint]
 select = [
-  "E","F","W",
-  "B","C4","SIM",
-  "I","TID",
-  "ANN","UP",
-  "S","DTZ","TRY","ERA",
-  "RET","RSE","Q","PGH","T20",
+  "E",
+  "F",
+  "W",
+  "B",
+  "C4",
+  "SIM",
+  "I",
+  "TID",
+  "ANN",
+  "UP",
+  "S",
+  "DTZ",
+  "TRY",
+  "ERA",
+  "RET",
+  "RSE",
+  "Q",
+  "PGH",
+  "T20",
   "RUF",
-  "N","A",
+  "N",
+  "A",
   "ASYNC",
-  "D102","D103","D400","D401"
+  "D102",
+  "D103",
+  "D400",
+  "D401"
 ]
 ignore = [
   # Type hints
-  "ANN002","ANN003","ANN204","ANN206",
+  "ANN002",
+  "ANN003",
+  "ANN204",
+  "ANN206",
   # Security
   "S311",  # allow random for fun commands
   # Pylint-inspired
-  "PLR2004","PLR0913"
+  "PLR2004",
+  "PLR0913"
 ]
-
-[tool.ruff.format]
-docstring-code-format = true
-indent-style = "space"
-quote-style = "double"
 
 [tool.ruff.lint.isort]
 required-imports = ["from __future__ import annotations"]
 known-first-party = ["bot"]
 lines-after-imports = 2
+
+[tool.ruff.format]
+docstring-code-format = true
+indent-style = "space"
+quote-style = "double"

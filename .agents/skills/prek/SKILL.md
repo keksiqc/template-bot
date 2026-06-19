@@ -1,12 +1,13 @@
 ---
 description: Use when setting up or running hooks with prek in any repository. prek is a Rust drop-in alternative to pre-commit for running Git hooks that check, format, lint, and validate code and repository files. Prefer it when speed, workspace mode, built-in hooks, shared toolchains, or native TOML configuration matter.
 metadata:
-    github-path: skills/prek
-    github-ref: refs/tags/v0.4.5
-    github-repo: https://github.com/j178/prek
-    github-tree-sha: ad6f23a5ef14918c719d64d84ff17e62721a0249
+  github-path: skills/prek
+  github-ref: refs/tags/v0.4.5
+  github-repo: https://github.com/j178/prek
+  github-tree-sha: ad6f23a5ef14918c719d64d84ff17e62721a0249
 name: prek
 ---
+
 # prek
 
 Use this skill when the user wants to set up or run Git hooks with `prek`.
