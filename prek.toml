@@ -6,13 +6,18 @@ default_install_hook_types = ["pre-push"]
 [[repos]]
 repo = "builtin"
 hooks = [
-  { id = "trailing-whitespace" },
   { id = "check-added-large-files" },
+  { id = "check-vcs-permalinks" },
+  { id = "trailing-whitespace" },
   { id = "end-of-file-fixer" },
+  { id = "check-merge-conflict" },
+  { id = "check-case-conflict" },
+  { id = "mixed-line-ending", args = ["--fix=lf"] },
+  { id = "check-symlinks" },
+  { id = "detect-private-key" },
   { id = "check-json" },
   { id = "check-yaml" },
   { id = "check-toml" },
-  { id = "mixed-line-ending" },
 ]
 
 [[repos]]
