@@ -18,6 +18,7 @@ dev = [
 ]
 
 [tool.ruff]
+cache-dir = ".cache/ruff"
 fix = true
 line-length = 120
 extend-exclude = [".cache", ".venv"]
