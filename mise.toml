@@ -15,27 +15,35 @@ BOT_CONFIG = "./settings.toml"
 description = "Install dependencies and hooks"
 run = ["uv sync --all-groups", "uv run prek install"]
 
-[tasks.check]
-description = "Check for linting and formatting issues"
-run = ["uv run ruff check", "uv run ruff format --check"]
+[tasks.format]
+description = "Format the code"
+run = ["uv run ruff format"]
 
-[tasks.fix]
-description = "Fix linting and formatting issues"
-run = ["uv run ruff check --fix", "uv run ruff format"]
+[tasks.lint]
+description = "Lint the code"
+run = ["uv run ruff check"]
 
-[tasks.typecheck]
+[tasks.type]
 description = "Run type checks"
 run = ["uv run ty check"]
 
-[tasks.start]
+[tasks.check]
+description = "Run all checks"
+depends = ["format --check", "lint", "type"]
+
+[tasks."check:fix"]
+description = "Fix all issues"
+depends = ["format", "lint --fix", "type --fix"]
+
+[tasks.dev]
 description = "Start the bot"
-depends = ["typecheck"]
+depends = ["type"]
 run = "uv run python -OO -m bot"
 
 [tasks.prek]
 description = "Run prek hooks"
 run = ["uv run prek run --all-files"]
 
-[tasks.prek-update]
+[tasks."prek:update"]
 description = "Update prek hooks"
 run = ["uv run prek auto-update"]
