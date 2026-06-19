@@ -20,7 +20,6 @@ dev = [
 [tool.ruff]
 fix = true
 line-length = 120
-target-version = "py313"
 extend-exclude = [".cache", ".venv"]
 output-format = "concise"
 unsafe-fixes = true
