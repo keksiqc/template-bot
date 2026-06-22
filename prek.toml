@@ -26,7 +26,7 @@ hooks = [{ id = "codespell" }]
 
 [[repos]]
 repo = "https://github.com/zizmorcore/zizmor-pre-commit"
-rev = "v1.25.2"
+rev = "v1.26.1"
 hooks = [{ id = "zizmor" }]
 
 [[repos]]
@@ -36,7 +36,7 @@ hooks = [{ id = "rumdl" }, { id = "rumdl-fmt" }]
 
 [[repos]]
 repo = "https://github.com/astral-sh/uv-pre-commit"
-rev = "0.11.22"
+rev = "0.11.23"
 hooks = [{ id = "uv-lock" }]
 
 [[repos]]
