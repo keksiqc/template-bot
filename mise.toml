@@ -1,3 +1,7 @@
+# Configuration file for mise, a task runner and environment manager.
+# See https://mise.jdx.dev for more information.
+#:schema https://mise.jdx.dev/schema/mise.json
+
 [tools]
 uv = "latest"
 
