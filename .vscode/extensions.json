@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "charliermarsh.ruff",
+        "astral-sh.ty",
+        "tombi-toml.tombi",
+        "hverlin.mise-vscode",
+        "rvben.rumdl"
+    ]
+}
