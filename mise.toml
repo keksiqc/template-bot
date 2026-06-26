@@ -15,6 +15,9 @@ _.file = ".env"
 BOT_ENV = "development"
 BOT_CONFIG = "./settings.toml"
 
+[hooks]
+enter = { task = "install" }
+
 [tasks.install]
 description = "Install dependencies and hooks"
 run = ["uv sync --all-groups", "uv run prek install"]
