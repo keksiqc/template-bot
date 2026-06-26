@@ -14,10 +14,10 @@ dependencies = [
 dev = [
   "commitizen>=4.16.4",
   "prek>=0.4.5",
-  "ruff>=0.15.19",
-  "rumdl>=0.2.22",
+  "ruff>=0.15.20",
+  "rumdl>=0.2.23",
   "tombi>=1.1.5",
-  "ty>=0.0.53",
+  "ty>=0.0.54",
 ]
 
 [tool.commitizen]
