@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, SecretStr
 from pydantic_settings import (
     BaseSettings,
     PydanticBaseSettingsSource,
@@ -13,8 +13,9 @@ __all__ = ["settings"]
 class BotSettings(BaseModel):
     """Bot settings model."""
 
-    token: str = ""
+    token: SecretStr = SecretStr("")
     prefix: str = "!"
+    env: str = "development"
 
 
 class Settings(BaseSettings):
