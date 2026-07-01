@@ -1,9 +1,12 @@
 [project]
 name = "template-bot"
 version = "0.1.0"
-description = ""
+description = "A template bot for Discord written in Python"
 readme = "README.md"
 requires-python = ">=3.14"
+authors = [
+  { name = "Keksi", email = "hello@keksi.dev" },
+]
 dependencies = [
   "hikari-lightbulb>=3.2.4",
   "hikari[speedups]>=2.5.0",
