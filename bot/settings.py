@@ -22,7 +22,9 @@ class Settings(BaseSettings):
 
     bot: BotSettings = BotSettings()
 
-    model_config = SettingsConfigDict(toml_file=["settings.toml", "config.toml"])
+    model_config = SettingsConfigDict(
+        env_file=".env", env_file_encoding="utf-8", env_nested_delimiter="_", toml_file=["settings.toml", "config.toml"]
+    )
 
     @classmethod
     def settings_customise_sources(
