@@ -13,10 +13,10 @@ dependencies = [
 [dependency-groups]
 dev = [
   "commitizen>=4.16.4",
-  "prek>=0.4.5",
+  "prek>=0.4.6",
   "ruff>=0.15.20",
-  "rumdl>=0.2.24",
-  "tombi>=1.1.5",
+  "rumdl>=0.2.27",
+  "tombi>=1.1.6",
   "ty>=0.0.55",
 ]
 
@@ -93,3 +93,6 @@ quote-style = "double"
 cache-dir = ".cache/rumdl"
 line-length = 200
 respect-gitignore = true
+
+[tool.tombi.files]
+exclude = ["uv.lock"]
