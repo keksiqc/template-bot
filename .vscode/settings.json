@@ -8,5 +8,8 @@
       "source.organizeImports": "explicit"
     },
     "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "files.associations": {
+    "docs/**/*.md": "python-markdown"
   }
 }
