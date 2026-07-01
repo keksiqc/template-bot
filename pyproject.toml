@@ -18,6 +18,7 @@ dev = [
   "rumdl>=0.2.27",
   "tombi>=1.1.6",
   "ty>=0.0.55",
+  "zensical>=0.0.46",
 ]
 
 [tool.commitizen]
@@ -104,6 +105,9 @@ quote-style = "double"
 cache-dir = ".cache/rumdl"
 line-length = 200
 respect-gitignore = true
+
+[tool.rumdl.per-file-flavor]
+"docs/**/*.md" = "mkdocs"
 
 [tool.tombi.files]
 exclude = ["uv.lock"]
