@@ -38,33 +38,42 @@ unsafe-fixes = true
 
 [tool.ruff.lint]
 select = [
-  "E",
-  "F",
-  "W",
-  "B",
-  "C4",
-  "SIM",
-  "I",
-  "TID",
-  "ANN",
-  "UP",
-  "S",
-  "DTZ",
-  "TRY",
-  "ERA",
-  "RET",
-  "RSE",
-  "Q",
-  "PGH",
-  "T20",
-  "RUF",
-  "N",
   "A",
+  "ANN",
+  "ARG",
   "ASYNC",
+  "B",
+  "BLE",
+  "C4",
   "D102",
   "D103",
   "D400",
-  "D401"
+  "D401",
+  "DTZ",
+  "E",
+  "ERA",
+  "F",
+  "FURB",
+  "G",
+  "I",
+  "N",
+  "PERF",
+  "PGH",
+  "PIE",
+  "PL",
+  "PTH",
+  "Q",
+  "RET",
+  "RSE",
+  "RUF",
+  "S",
+  "SIM",
+  "T20",
+  "TC",
+  "TID",
+  "TRY",
+  "UP",
+  "W"
 ]
 ignore = [
   # Type hints
@@ -72,15 +81,14 @@ ignore = [
   "ANN003",
   "ANN204",
   "ANN206",
-  # Security
-  "S311",  # allow random for fun commands
   # Pylint-inspired
+  "PLR0913",
   "PLR2004",
-  "PLR0913"
+  # Security
+  "S311"  # allow random for fun commands
 ]
 
 [tool.ruff.lint.isort]
-required-imports = ["from __future__ import annotations"]
 known-first-party = ["bot"]
 lines-after-imports = 2
 
