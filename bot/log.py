@@ -31,7 +31,6 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 def _build_file_handler(log_path: Path) -> logging.Handler:
     """Create the rotating file handler used for persistent logs."""
-
     file_handler = logging.handlers.TimedRotatingFileHandler(
         log_path,
         when="midnight",
@@ -46,7 +45,6 @@ def _build_file_handler(log_path: Path) -> logging.Handler:
 
 def _build_stream_handler() -> logging.Handler:
     """Create the console handler, using color when available."""
-
     stream_handler = logging.StreamHandler()
 
     if COLORLOG_DISABLED:
@@ -63,7 +61,6 @@ def init_logging(
     log_path: str | Path = DEFAULT_LOG_PATH,
 ) -> None:
     """Configure the root logger once at application start."""
-
     resolved_log_path = Path(log_path)
     resolved_level = os.environ.get("LOG_LEVEL", level)
 
@@ -94,7 +91,6 @@ def init_logging(
 
 def _run_self_test() -> None:
     """Emit one message at each severity to validate the logger configuration."""
-
     init_logging(level="DEBUG")
     log = logging.getLogger(__name__)
 
