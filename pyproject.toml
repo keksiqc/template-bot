@@ -22,7 +22,7 @@ dev = [
   "rumdl>=0.2.28",
   "tombi>=1.1.7",
   "ty>=0.0.56",
-  "zensical>=0.0.46",
+  "zensical>=0.0.47",
 ]
 
 [tool.commitizen]
