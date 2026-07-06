@@ -923,7 +923,7 @@ dev = [
     { name = "prek", specifier = ">=0.4.8" },
     { name = "ruff", specifier = ">=0.15.20" },
     { name = "rumdl", specifier = ">=0.2.28" },
-    { name = "tombi", specifier = ">=1.1.7" },
+    { name = "tombi", specifier = ">=1.2.0" },
     { name = "ty", specifier = ">=0.0.56" },
     { name = "zensical", specifier = ">=0.0.47" },
 ]
