@@ -17,7 +17,7 @@ dependencies = [
 [dependency-groups]
 dev = [
   "commitizen>=4.16.4",
-  "prek>=0.4.8",
+  "prek>=0.4.9",
   "ruff>=0.15.21",
   "rumdl>=0.2.30",
   "tombi>=1.2.0",
