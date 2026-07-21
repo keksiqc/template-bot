@@ -52,4 +52,4 @@ run = ["uv run prek run --all-files"]
 
 [tasks."prek:update"]
 description = "Update prek hooks"
-run = ["uv run prek auto-update"]
+run = ["uv run prek update --freeze"]
