@@ -941,7 +941,7 @@ requires-dist = [
 dev = [
     { name = "commitizen", specifier = ">=4.16.5" },
     { name = "prek", specifier = ">=0.4.11" },
-    { name = "ruff", specifier = ">=0.15.22" },
+    { name = "ruff", specifier = ">=0.16.0" },
     { name = "rumdl", specifier = ">=0.2.43" },
     { name = "tombi", specifier = ">=1.2.4" },
     { name = "ty", specifier = ">=0.0.63" },
