@@ -16,11 +16,11 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-  "commitizen>=4.16.5",
-  "prek>=0.4.11",
+  "commitizen>=4.17.0",
+  "prek>=0.4.12",
   "ruff>=0.16.1",
   "rumdl>=0.2.49",
-  "tombi>=1.2.5",
+  "tombi>=1.2.6",
   "ty>=0.0.65",
   "zensical>=0.0.52",
 ]
