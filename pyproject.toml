@@ -18,10 +18,10 @@ dependencies = [
 dev = [
   "commitizen>=4.17.0",
   "prek>=0.4.12",
-  "ruff>=0.16.1",
+  "ruff>=0.16.2",
   "rumdl>=0.2.52",
-  "tombi>=1.2.6",
-  "ty>=0.0.68",
+  "tombi>=1.2.7",
+  "ty>=0.0.69",
   "zensical>=0.0.53",
 ]
 
