@@ -10,17 +10,17 @@ authors = [
 dependencies = [
   "hikari-lightbulb>=3.2.5",
   "hikari[speedups]>=2.5.0",
-  "pydantic-settings>=2.14.2",
+  "pydantic-settings>=2.15.0",
   "uvloop>=0.22.1",
 ]
 
 [dependency-groups]
 dev = [
   "commitizen>=4.17.0",
-  "prek>=0.4.12",
+  "prek>=0.4.13",
   "ruff>=0.16.2",
-  "rumdl>=0.2.52",
-  "tombi>=1.2.8",
+  "rumdl>=0.2.53",
+  "tombi>=1.2.10",
   "ty>=0.0.69",
   "zensical>=0.0.53",
 ]
