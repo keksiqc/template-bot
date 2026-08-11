@@ -9,6 +9,10 @@
     },
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
+  "[toml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "tombi-toml.tombi"
+  },
   "files.associations": {
     "docs/**/*.md": "python-markdown"
   }
