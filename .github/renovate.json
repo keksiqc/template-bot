@@ -1,3 +1,14 @@
 {
-  "extends": ["github>umicloud/renovate-config"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>umicloud/renovate-config"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^prek\\.toml$"],
+      "matchStrings": ["repo\\s*=\\s*[\"']https://github\\.com/(?<depName>[^\"']+)[\"'][\\s\\S]*?rev\\s*=\\s*[\"'](?<currentValue>[^\"']+)[\"']"],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "{{{depName}}}",
+      "versioningTemplate": "semver"
+    }
+  ]
 }
