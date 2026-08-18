@@ -19,10 +19,10 @@ dev = [
   "commitizen>=4.17.1",
   "prek>=0.4.14",
   "ruff>=0.16.3",
-  "rumdl>=0.2.55",
+  "rumdl>=0.2.57",
   "tombi>=1.4.1",
   "ty>=0.0.72",
-  "zensical>=0.0.55",
+  "zensical>=0.0.56",
 ]
 
 [tool.commitizen]
