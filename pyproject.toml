@@ -9,7 +9,7 @@ authors = [
 ]
 dependencies = [
   "hikari-lightbulb>=3.2.6",
-  "hikari[speedups]>=2.5.0",
+  "hikari[speedups]>=2.6.0",
   "pydantic-settings>=2.15.0",
   "uvloop>=0.22.1",
 ]
