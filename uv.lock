@@ -1005,7 +1005,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "commitizen", specifier = ">=4.17.1" },
+    { name = "commitizen", specifier = ">=4.18.0" },
     { name = "prek", specifier = ">=0.4.14" },
     { name = "ruff", specifier = ">=0.16.4" },
     { name = "rumdl", specifier = ">=0.2.60" },
