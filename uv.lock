@@ -1006,7 +1006,7 @@ dev = [
     { name = "prek", specifier = ">=0.5.0" },
     { name = "ruff", specifier = ">=0.16.5" },
     { name = "rumdl", specifier = ">=0.2.62" },
-    { name = "tombi", specifier = ">=1.4.1" },
+    { name = "tombi", specifier = ">=1.5.0" },
     { name = "ty", specifier = ">=0.0.75" },
     { name = "zensical", specifier = ">=0.0.57" },
 ]
