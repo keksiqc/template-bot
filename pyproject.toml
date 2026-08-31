@@ -42,59 +42,7 @@ output-format = "concise"
 unsafe-fixes = true
 
 [tool.ruff.lint]
-select = [
-  "A",
-  "ANN",
-  "ARG",
-  "ASYNC",
-  "B",
-  "BLE",
-  "C4",
-  "D",
-  "DTZ",
-  "E",
-  "ERA",
-  "F",
-  "FURB",
-  "G",
-  "I",
-  "LOG",
-  "N",
-  "PERF",
-  "PGH",
-  "PIE",
-  "PL",
-  "PTH",
-  "Q",
-  "RET",
-  "RSE",
-  "RUF",
-  "S",
-  "SIM",
-  "T20",
-  "TC",
-  "TID",
-  "TRY",
-  "UP",
-  "W"
-]
-ignore = [
-  # Type hints
-  "ANN002",
-  "ANN003",
-  "ANN204",
-  "ANN206",
-  # Docstring
-  "D100",
-  "D104",
-  "D203",
-  "D212",
-  # Pylint-inspired
-  "PLR0913",
-  "PLR2004",
-  # Security
-  "S311"  # allow random for fun commands
-]
+ignore = []
 
 [tool.ruff.lint.isort]
 known-first-party = ["bot"]
