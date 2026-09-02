@@ -1045,6 +1045,8 @@ dev = [
     { name = "rumdl" },
     { name = "tombi" },
     { name = "ty" },
+]
+docs = [
     { name = "zensical" },
 ]
 
@@ -1065,8 +1067,8 @@ dev = [
     { name = "rumdl", specifier = ">=0.2.62" },
     { name = "tombi", specifier = ">=1.5.0" },
     { name = "ty", specifier = ">=0.0.77" },
-    { name = "zensical", specifier = ">=0.0.57" },
 ]
+docs = [{ name = "zensical", specifier = ">=0.0.57" }]
 
 [[package]]
 name = "termcolor"
