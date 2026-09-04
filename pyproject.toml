@@ -19,13 +19,13 @@ dependencies = [
 dev = [
   "commitizen>=4.18.0",
   "prek>=0.5.2",
-  "ruff>=0.16.5",
-  "rumdl>=0.2.63",
-  "tombi>=1.5.0",
+  "ruff>=0.16.6",
+  "rumdl>=0.2.64",
+  "tombi>=1.5.1",
   "ty>=0.0.78",
 ]
 docs = [
-  "zensical>=0.0.58",
+  "zensical>=0.0.59",
 ]
 
 [tool.commitizen]
