@@ -20,9 +20,9 @@ dev = [
   "commitizen>=4.18.0",
   "prek>=0.5.2",
   "ruff>=0.16.6",
-  "rumdl>=0.2.67",
+  "rumdl>=0.2.68",
   "tombi>=1.5.2",
-  "ty>=0.0.78",
+  "ty>=0.0.79",
 ]
 docs = [
   "zensical>=0.0.59",
