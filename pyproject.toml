@@ -17,7 +17,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-  "commitizen>=4.18.0",
+  "commitizen>=4.18.1",
   "prek>=0.5.3",
   "ruff>=0.16.7",
   "rumdl>=0.2.73",
@@ -25,7 +25,7 @@ dev = [
   "ty>=0.0.80",
 ]
 docs = [
-  "zensical>=0.0.61",
+  "zensical>=0.0.62",
 ]
 
 [tool.commitizen]
