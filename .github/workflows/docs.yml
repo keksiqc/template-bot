@@ -29,12 +29,10 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
         with:
-          enable-cache: true
-          cache-python: true
           python-version: '3.14'
 
       - name: Build documentation
-        run: uvx zensical build --clean
+        run: uv run --group docs zensical build --clean
 
       - name: Configure pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
