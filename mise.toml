@@ -21,25 +21,21 @@ enter = { task = "install" }
 description = "Install dependencies and hooks"
 run = ["uv sync --all-groups", "uv run prek install"]
 
-[tasks.format]
-description = "Format the code"
-run = ["uv run ruff format"]
-
-[tasks.lint]
-description = "Lint the code"
-run = ["uv run ruff check"]
-
-[tasks.type]
-description = "Run type checks"
-run = ["uv run ty check"]
-
 [tasks.check]
 description = "Run all checks"
-depends = ["format --check", "lint", "type"]
+run = [
+  "ruff format --check",
+  "ruff check",
+  "ty check",
+]
 
-[tasks."check:fix"]
+[tasks.fix]
 description = "Fix all issues"
-depends = ["format", "lint --fix", "type --fix"]
+run = [
+  "ruff format",
+  "ruff check --fix",
+  "ty check --fix",
+]
 
 [tasks.dev]
 description = "Start the bot"
