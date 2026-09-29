@@ -37,24 +37,29 @@ update_changelog_on_bump = true
 major_version_zero = true
 
 [tool.ruff]
-cache-dir = ".cache/ruff"
-fix = true
+cache-dir = "~/.cache/ruff"
 line-length = 120
-extend-exclude = [".cache", ".venv"]
-output-format = "concise"
-unsafe-fixes = true
-
-[tool.ruff.lint]
-ignore = []
-
-[tool.ruff.lint.isort]
-known-first-party = ["bot"]
-lines-after-imports = 2
+output-format = "grouped"
 
 [tool.ruff.format]
 docstring-code-format = true
 indent-style = "space"
+line-ending = "lf"
 quote-style = "double"
+
+[tool.ruff.lint]
+preview = true
+select = [
+  "correctness",
+  "suspicious",
+  "complexity",
+  "performance",
+  "style",
+  "security",
+]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
 
 [tool.rumdl]
 cache-dir = ".cache/rumdl"
