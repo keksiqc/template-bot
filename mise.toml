@@ -25,16 +25,16 @@ run = ["uv sync --all-groups", "uv run prek install"]
 [tasks.check]
 description = "Run all checks"
 run = [
-  "ruff format --check",
   "ruff check",
+  "ruff format --check",
   "ty check",
 ]
 
 [tasks.fix]
 description = "Fix all issues"
 run = [
-  "ruff format",
   "ruff check --fix",
+  "ruff format",
   "ty check --fix",
 ]
 
