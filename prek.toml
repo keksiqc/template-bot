@@ -2,6 +2,7 @@
 # See https://prek.j178.dev for more information.
 #:schema https://www.schemastore.org/prek.json
 
+fail_fast = true
 default_install_hook_types = ["pre-commit", "pre-push", "commit-msg"]
 default_stages = ["pre-commit"]
 
@@ -52,8 +53,7 @@ hooks = [
 repo = "https://github.com/rvben/rumdl-pre-commit"
 rev = "358bd98f7d9d33fefe5a148875d1d61e7e558f2d"  # frozen: v0.2.62
 hooks = [
-  { id = "rumdl-fmt" },
-  { id = "rumdl" },
+  { id = "rumdl", args = ["--fix"] },
 ]
 
 [[repos]]
