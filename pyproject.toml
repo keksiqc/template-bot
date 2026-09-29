@@ -62,7 +62,7 @@ select = [
 lines-after-imports = 2
 
 [tool.rumdl]
-cache-dir = ".cache/rumdl"
+cache-dir = "~/.cache/rumdl"
 line-length = 200
 respect-gitignore = true
 
