@@ -11,7 +11,7 @@ dependencies = [
   "hikari-lightbulb>=3.2.6",
   "hikari[speedups]>=2.6.0",
   "pydantic-settings>=2.15.0",
-  "tortoise-orm[accel,asyncpg]>=1.1.8",
+  "tortoise-orm[accel,asyncpg]>=1.1.9",
   "uvloop>=0.23.0",
 ]
 
